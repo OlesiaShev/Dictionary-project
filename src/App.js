@@ -8,7 +8,15 @@ function App() {
         <Dictionary />
       </div>
       <p className="mt-5 text-muted">
-        <small>Coded by Olesia Shevchenko. Code is open soure.</small>
+        <small>
+          Coded by Olesia Shevchenko.{" "}
+          <a
+            href="https://github.com/OlesiaShev/Dictionary-project"
+            target="_blank"
+          >
+            Code is open soure.
+          </a>
+        </small>
       </p>
     </div>
   );
