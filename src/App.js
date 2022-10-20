@@ -1,6 +1,7 @@
 import "./App.css";
 import Dictionary from "./Dictionary";
 
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
           <a
             href="https://github.com/OlesiaShev/Dictionary-project"
             target="_blank"
+            rel="noreferrer"
           >
             Code is open soure.
           </a>
