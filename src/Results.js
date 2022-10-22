@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Results(props) {
   let resultObject = props.results;
@@ -6,17 +6,15 @@ export default function Results(props) {
   console.log(resultObject);
   if (props.loaded === true) {
     return resultObject.map(function (array, index) {
-    //  console.log(array);
+      //  console.log(array);
       let word = array.word;
       return (
         <div key={index}>
           <div>
             <h1 className="border border-primary p-2">{word}</h1>
-            { array.meanings.map(function (meaning, index)
-            {
-           //   console.log(meaning);
+            {array.meanings.map(function (meaning, index) {
+              //   console.log(meaning);
               let definitions = meaning.definitions;
-              let synonyms = meaning.synonyms;
               return (
                 <div key={index}>
                   {" "}
@@ -37,6 +35,6 @@ export default function Results(props) {
       );
     });
   } else {
-    return     null
+    return null;
   }
 }
