@@ -9,7 +9,7 @@ export default function Dictionary() {
 
   function showResponse(response) {
     setLoaded(true);
-    setResults(response.data[0]);
+    setResults(response.data);
 
   }
 

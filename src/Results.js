@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Results(props) {
-  console.log(props.results);
+  let resultObject = props.results;
+
+  console.log(resultObject);
   if (props.loaded === true) {
-    return (
-      <div className="border-top border-primary mt-2">
-        <h1 className="text-left">{props.results.word}</h1>
-        <p>
-          {props.results.meanings.map(function (meaning, index) {
-            return meaning.definitions[0].definition;
-          })}
-        </p>
-      </div>
-    );
+    return resultObject.map(function (array, index) {
+    //  console.log(array);
+      let word = array.word;
+      return (
+        <div key={index}>
+          <div>
+            <h1 className="border border-primary p-2">{word}</h1>
+            { array.meanings.map(function (meaning, index)
+            {
+           //   console.log(meaning);
+              let definitions = meaning.definitions;
+              let synonyms = meaning.synonyms;
+              return (
+                <div key={index}>
+                  {" "}
+                  <strong>{meaning.partOfSpeech}</strong>{" "}
+                  {definitions.map(function (definition, index) {
+                    //  console.log(definition);
+                    return (
+                      <ul key={index} className="text-left">
+                        <li>{definition.definition}</li>
+                      </ul>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    });
   } else {
-    return null;
+    return     null
   }
 }
