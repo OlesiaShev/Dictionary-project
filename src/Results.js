@@ -17,8 +17,9 @@ export default function Results(props) {
               let definitions = meaning.definitions;
               return (
                 <div key={index}>
-                  {" "}
-                  <strong>{meaning.partOfSpeech}</strong>{" "}
+                  <strong className="border-bottom border-primary mt-5">
+                    {meaning.partOfSpeech}
+                  </strong>{" "}
                   {definitions.map(function (definition, index) {
                     //  console.log(definition);
                     return (
