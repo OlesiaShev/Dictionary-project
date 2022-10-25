@@ -16,7 +16,7 @@ export default function Synonyms(props)
         </div>
       );
     } else {
-      return "Hello from syn";
+      return null;
     }
     
 }
