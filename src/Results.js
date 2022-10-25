@@ -1,30 +1,34 @@
 import React from "react";
+import Synonyms from "./Synonyms";
 
 export default function Results(props) {
   let resultObject = props.results;
 
-  console.log(resultObject);
+  // console.log(resultObject);
   if (props.loaded === true) {
     return resultObject.map(function (array, index) {
-      //  console.log(array);
+      // console.log(array);
       let word = array.word;
       return (
         <div key={index}>
           <div>
-            <h1 className="border border-primary p-2">{word}</h1>
+            <h2 className="border border-primary p-2 bg-primary">{word}</h2>
             {array.meanings.map(function (meaning, index) {
-              //   console.log(meaning);
+              // console.log(meaning);
               let definitions = meaning.definitions;
               return (
-                <div key={index}>
-                  <strong className="border-bottom border-primary mt-5">
+                <div key={index} className="bg-light">
+                  <strong className="border-bottom border-primary mt-4">
                     {meaning.partOfSpeech}
                   </strong>{" "}
                   {definitions.map(function (definition, index) {
-                    //  console.log(definition);
+                    console.log(definition);
                     return (
                       <ul key={index} className="text-left">
-                        <li>{definition.definition}</li>
+                        <li>
+                          {definition.definition}
+                          <Synonyms synonyms={definition.synonyms} />
+                        </li>
                       </ul>
                     );
                   })}
