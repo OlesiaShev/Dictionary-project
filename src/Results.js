@@ -1,18 +1,29 @@
 import React from "react";
 import Synonyms from "./Synonyms";
+import Phonetics from "./Phonetics";
 
-export default function Results(props) {
+export default function Results(props)
+{
+  console.log(props);
   let resultObject = props.results;
 
-  // console.log(resultObject);
+  //console.log(resultObject);
   if (props.loaded === true) {
     return resultObject.map(function (array, index) {
-      // console.log(array);
+      console.log(array);
       let word = array.word;
       return (
         <div key={index}>
           <div>
-            <h2 className="border border-primary p-2 bg-primary">{word}</h2>
+            <div className="border border-primary p-2 bg-primary text-left">
+              <h2 className="text-center">
+                {word}{" "}
+              </h2>
+              <div>
+                <Phonetics phonetics={array.phonetics} />
+              </div>
+            </div>
+
             {array.meanings.map(function (meaning, index) {
               // console.log(meaning);
               let definitions = meaning.definitions;
@@ -22,7 +33,7 @@ export default function Results(props) {
                     {meaning.partOfSpeech}
                   </strong>{" "}
                   {definitions.map(function (definition, index) {
-                    console.log(definition);
+                    //console.log(definition);
                     return (
                       <ul key={index} className="text-left">
                         <li>
