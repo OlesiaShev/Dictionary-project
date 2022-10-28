@@ -6,21 +6,28 @@ export default function Phonetics(props) {
   <div>
       {props.phonetics.map(function (phonetic, index)
       {
-        console.log(phonetic.audio);
+        console.log(phonetic);
+        if (phonetic.audio !== "" || phonetic.text !== "") {
           return (
-            <span key={index}>
-              {" "}
-              <a
-                href={phonetic.audio}
-                className="text-dark"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i class="fa-solid fa-volume-high"></i>
-              </a>{" "}
-              {phonetic.text}
-            </span>
+            <button type="button" class="btn btn-light mr-2">
+              <span key={index}>
+                {" "}
+                <a
+                  href={phonetic.audio}
+                  className="text-dark"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i class="fa-solid fa-volume-high"></i>
+                </a>{" "}
+                {phonetic.text}
+              </span> 
+            </button>
           );
+        } else {
+          return " ";
+        }
+        
         
     })}
   </div>

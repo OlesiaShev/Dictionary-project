@@ -15,7 +15,7 @@ export default function Results(props)
       return (
         <div key={index}>
           <div>
-            <div className="border border-primary p-2 bg-primary text-left">
+            <div className="border border-primary p-2 bg-primary text-left rounded">
               <h2 className="text-center">
                 {word}{" "}
               </h2>
@@ -28,7 +28,7 @@ export default function Results(props)
               // console.log(meaning);
               let definitions = meaning.definitions;
               return (
-                <div key={index} className="bg-light">
+                <div key={index} className="bg-light border rounded mb-3">
                   <strong className="border-bottom border-primary mt-4">
                     {meaning.partOfSpeech}
                   </strong>{" "}
