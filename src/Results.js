@@ -4,13 +4,13 @@ import Phonetics from "./Phonetics";
 
 export default function Results(props)
 {
-  console.log(props);
+ // console.log(props);
   let resultObject = props.results;
 
   //console.log(resultObject);
   if (props.loaded === true) {
     return resultObject.map(function (array, index) {
-      console.log(array);
+      //console.log(array);
       let word = array.word;
       return (
         <div key={index}>

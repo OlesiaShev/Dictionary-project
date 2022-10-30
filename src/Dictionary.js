@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
-import Logo from "./images/undraw_typewriter_re_u9i2.svg";
+import Pictures from "./Pictures";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState(null);
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [pictures, setPictures] = useState(null);
 
   function showResponse(response) {
     setLoaded(true);
     setResults(response.data);
+    document.querySelector("#main-picture").classList.add("notActive");
 
   }
   function showPictures(response) {
-    console.log(response);
+    //console.log(response.data.photos);
+    setPictures(response.data.photos);
   }
 
   function Search(event) {
@@ -34,10 +37,12 @@ export default function Dictionary() {
   }
   return (
     <div>
+      <Pictures pictures={pictures} />
       <img
-        src={Logo}
+        src={"https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg?auto=compress&cs=tinysrgb&h=350"}
         className="logo img-fluid mt-3"
         alt="logo"
+        id="main-picture"
       ></img>
       <div className="Dictionary border-top border-primary mt-5">
         <header>

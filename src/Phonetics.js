@@ -6,10 +6,10 @@ export default function Phonetics(props) {
   <div>
       {props.phonetics.map(function (phonetic, index)
       {
-        console.log(phonetic);
+        //console.log(phonetic);
         if (phonetic.audio !== "" || phonetic.text !== "") {
           return (
-            <button type="button" class="btn btn-light mr-2" key={index}>
+            <button type="button" className="btn btn-light mr-2" key={index}>
               <span>
                 {" "}
                 <a
