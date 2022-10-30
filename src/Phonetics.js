@@ -9,8 +9,8 @@ export default function Phonetics(props) {
         console.log(phonetic);
         if (phonetic.audio !== "" || phonetic.text !== "") {
           return (
-            <button type="button" class="btn btn-light mr-2">
-              <span key={index}>
+            <button type="button" class="btn btn-light mr-2" key={index}>
+              <span>
                 {" "}
                 <a
                   href={phonetic.audio}
@@ -18,10 +18,10 @@ export default function Phonetics(props) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <i class="fa-solid fa-volume-high"></i>
+                  <i className="fa-solid fa-volume-high"></i>
                 </a>{" "}
                 {phonetic.text}
-              </span> 
+              </span>
             </button>
           );
         } else {

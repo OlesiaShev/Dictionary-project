@@ -13,11 +13,21 @@ export default function Dictionary() {
     setResults(response.data);
 
   }
+  function showPictures(response) {
+    console.log(response);
+  }
 
   function Search(event) {
     event.preventDefault();
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(url).then(showResponse);
+
+    let pexelAPIKey =
+      "563492ad6f917000010000018dcbb3ad01384925946d0b10051a1a75";
+    let pexelUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
+    axios
+      .get(pexelUrl, { headers: { Authorization: `Bearer ${pexelAPIKey}` } })
+      .then(showPictures);
   }
   function ChangeKeyword(event) {
     setKeyword(event.target.value);
