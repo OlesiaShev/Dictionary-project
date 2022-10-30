@@ -2,7 +2,7 @@ import React from "react";
 export default function Pictures(props)
 {
     if (props.pictures) {
-        console.log(props.pictures);
+       // console.log(props.pictures);
         return (
           <div>
             {props.pictures.map(function (pictures, index) {

@@ -4,7 +4,7 @@ import Results from "./Results";
 import Pictures from "./Pictures";
 
 export default function Dictionary() {
-  let [keyword, setKeyword] = useState(null);
+  let [keyword, setKeyword] = useState("");
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
   let [pictures, setPictures] = useState(null);
