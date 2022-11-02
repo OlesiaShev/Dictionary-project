@@ -12,7 +12,7 @@ export default function Dictionary() {
   function showResponse(response) {
     setLoaded(true);
     setResults(response.data);
-    document.querySelector("#main-picture").classList.add("notActive");
+    
 
   }
   function showPictures(response) {
@@ -24,6 +24,7 @@ export default function Dictionary() {
     event.preventDefault();
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(url).then(showResponse);
+    document.querySelector("#main-picture").classList.add("notActive");
 
     let pexelAPIKey =
       "563492ad6f917000010000018dcbb3ad01384925946d0b10051a1a75";
